@@ -29,6 +29,7 @@
     "hoek": "^4.2.1",
     "promise-polyfill": "8.0.0",
     "rxjs": "^6.2.2",
+    "rxjs-compat": "^6.2.2",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.7.2"
   },
