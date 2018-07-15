@@ -1,8 +1,7 @@
-import { Observable, Subject, asapScheduler, pipe, of, from, interval, merge, fromEvent, SubscriptionLike, PartialObserver } from 'rxjs';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
@@ -12,7 +11,13 @@ import {
   MatListModule,
   MatProgressSpinnerModule,
   MatTabsModule,
+  MatInputModule,
 } from '@angular/material';
+
+import { 
+  ApiService,
+  TripService 
+} from './shared';
 
 
 import { AppComponent } from './app.component';
@@ -23,9 +28,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpModule,
 
     // Material modules
     MatCardModule,
@@ -34,8 +39,12 @@ import { AppComponent } from './app.component';
     MatCheckboxModule,
     MatProgressSpinnerModule,
     MatTabsModule,
+    MatInputModule,
   ],
-  providers: [],
+  providers: [
+    ApiService,
+    TripService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

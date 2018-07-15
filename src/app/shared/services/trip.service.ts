@@ -9,8 +9,10 @@ import { Trip } from '../models';
 
 @Injectable()
 export class TripService {
+  private trips: Trip[] = [];
   constructor (
-    private apiService: ApiService
+    private apiService: ApiService,
+    
   ) {}
 
   // 
@@ -19,8 +21,8 @@ export class TripService {
   // }
 
   get(id): Observable<Trip> {
-    return this.apiService.get(id)
-           .map(data => data.post);
+    return this.apiService.get(id, {})
+           .map(data => data.trip);
   }
 
   save(trip): Observable<Trip> {
@@ -31,8 +33,18 @@ export class TripService {
 
     // Otherwise, create a new trip
     } else {
-      return this.apiService.post({trip: trip})
-             .map(data => data.post);
+      return this.apiService.post({trip: trip}).map(data => {
+        console.log(data);
+        // Update id and revision
+        trip._id = data.id;
+        trip._rev = data.rev;
+
+        // Save to the list of trips
+        this.trips.push(trip);
+        console.log(this.trips);
+
+        return trip;
+      });
     }
   }
 

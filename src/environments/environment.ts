@@ -7,7 +7,8 @@ export const environment = {
   production: false,
   DB_API_URL: 'https://a3f418f5-cb1e-4f1a-9a1b-fe769a134c9d-bluemix.cloudant.com',
   DB_USERNAME: 'a3f418f5-cb1e-4f1a-9a1b-fe769a134c9d-bluemix',
-  DB_KEY: 'ourcedenjectneingainglea',
-  DB_PASSWORD: '4dd2419af608aaa53ea71fe4b545e1e328ca3679',
+  DB_KEY: 'tougglyraythenteweremale',
+  DB_PASSWORD: '1f474f45d8439d8d7489d7365d2e39d4a5ced3dd',
   DB_NAME: 'travelapp',
 };
+
